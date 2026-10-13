@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DHARA – Sustainable Clothing</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#faf6ee;--card:#fff;--tx:#2b2a24;--mut:#6f6a5c;--pr:#4a6b3a;--ac:#c4713b;--bd:#e6dfce}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1d18;--card:#272820;--tx:#f1ecdf;--mut:#a9a392;--pr:#8fb77a;--ac:#e0935c;--bd:#3a3b30}}
+:root[data-theme="dark"]{--bg:#1c1d18;--card:#272820;--tx:#f1ecdf;--mut:#a9a392;--pr:#8fb77a;--ac:#e0935c;--bd:#3a3b30}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 Georgia,'Times New Roman',serif}
+h1,h2,h3{margin:0}button,input,select,textarea{font:inherit;color:inherit}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:12px;padding:10px 16px}
+.logo{font-size:24px;letter-spacing:4px;color:var(--pr);font-weight:700}
+nav{display:flex;gap:14px;margin-left:auto;font-size:14px;overflow-x:auto}nav a{color:var(--tx);text-decoration:none;white-space:nowrap}
+.cartbtn{background:var(--pr);color:#fff;border:0;border-radius:20px;padding:6px 14px;cursor:pointer}
+.hero{padding:48px 20px;text-align:center;background:linear-gradient(135deg,#dfe8cf,#f3dcc3);color:#2b2a24}
+.hero h1{font-size:clamp(30px,6vw,48px)}.hero p{max-width:520px;margin:12px auto}
+.btn{background:var(--ac);color:#fff;border:0;border-radius:8px;padding:10px 18px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.alt{background:transparent;color:var(--pr);border:1px solid var(--pr)}
+section{padding:32px 16px;max-width:1000px;margin:auto}h2{margin-bottom:14px;color:var(--pr)}
+.offers{display:flex;gap:10px;flex-wrap:wrap}.offer{flex:1;min-width:200px;border:2px dashed var(--ac);border-radius:10px;padding:12px;background:var(--card)}
+.offer b{color:var(--ac);letter-spacing:1px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.bar input,.bar select,form input,form select,form textarea{padding:9px;border:1px solid var(--bd);border-radius:8px;background:var(--card);width:100%}
+.bar input{flex:1;min-width:150px;width:auto}.bar select{width:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;overflow:hidden}
+.img{height:170px;cursor:pointer;overflow:hidden}.spec{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0}.spec td{padding:5px;border-bottom:1px solid var(--bd);vertical-align:top}.spec td:first-child{color:var(--mut);width:35%}
+.card .in{padding:10px}.card h3{font-size:16px}.pr{font-weight:700;color:var(--pr)}.old{text-decoration:line-through;color:var(--mut);font-size:13px;margin-left:6px}
+.row{display:flex;gap:6px;margin-top:8px}.row .btn{flex:1;padding:7px;font-size:14px}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.svc div{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px}
+.rev{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px;margin-bottom:8px}
+form{display:grid;gap:8px;max-width:460px}
+.modal{position:fixed;inset:0;background:#0007;display:none;align-items:center;justify-content:center;z-index:30;padding:14px}
+.modal.on{display:flex}.box{background:var(--bg);border-radius:14px;padding:18px;max-width:440px;width:100%;max-height:90vh;overflow:auto}
+.drawer{position:fixed;top:0;right:-100%;width:min(380px,100%);height:100%;background:var(--bg);z-index:40;padding:16px;transition:.25s;overflow:auto;box-shadow:-4px 0 20px #0004}
+.drawer.on{right:0}.ci{display:flex;gap:8px;align-items:center;border-bottom:1px solid var(--bd);padding:8px 0}
+.ci span.e{font-size:30px}.ci div{flex:1}.q button{width:26px;height:26px;border-radius:50%;border:1px solid var(--bd);background:var(--card);cursor:pointer}
+.strip{background:var(--ac);color:#fff;text-align:center;font-size:13px;padding:6px 10px;cursor:pointer}.big{font-size:20px;text-align:center}.cp{display:flex;align-items:center;gap:10px;border:2px dashed var(--ac);border-radius:10px;padding:10px;margin:8px 0;background:var(--card)}.cp div{flex:1}.cp b{color:var(--ac);letter-spacing:1px}.cp button{background:var(--pr);color:#fff;border:0;border-radius:8px;padding:6px 12px;cursor:pointer}.bd{background:#c4713b;color:#fff;font-size:11px;border-radius:10px;padding:1px 8px;margin-left:6px}
+footer{background:#2f3a27;color:#eee;padding:28px 16px;text-align:center;font-size:14px}footer a{color:#f3c9a2}
+.chat{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:20;background:#25a244;color:#fff;border-radius:30px;padding:12px 16px;text-decoration:none;box-shadow:0 3px 12px #0005}
+.toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:#222;color:#fff;padding:10px 16px;border-radius:20px;z-index:60;display:none}
+.stars button{background:none;border:0;font-size:24px;cursor:pointer;color:#e0a100}
+</style></head><body>
+<div class="strip" onclick="showOffers()">🎉 Festive offers: use DHARA10, WELCOME200 or FREESHIP · Tap to view</div>
+<header><div class="logo">DHARA</div>
+<nav><a href="#shop">Shop</a><a href="#offers">Offers</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#help">Help</a><a href="#contact">Contact</a></nav>
+<button class="cartbtn" onclick="openCart()">🛒 <span id="cc">0</span></button></header>
+
+<div class="hero"><h1>Wear the earth, gently.</h1>
+<p>Handloom, organic and sustainably made clothing for everyday life.</p>
+<a class="btn" href="#shop">Shop now</a> <a class="btn alt" style="background:#fff8" href="https://dhara-sustainable-clothing.my.canva.site/" target="_blank" rel="noopener">Visit our website</a></div>
+
+<section id="offers"><h2>Offers &amp; Coupons</h2><div class="offers">
+<div class="offer"><b>DHARA10</b><br>10% off on all orders</div>
+<div class="offer"><b>WELCOME200</b><br>₹200 off on orders above ₹1500</div>
+<div class="offer"><b>FREESHIP</b><br>Free delivery on any order</div></div></section>
+
+<section id="shop"><h2>Our Collection</h2>
+<div class="bar"><input id="q" placeholder="Search clothes…" oninput="render()">
+<select id="cat" onchange="render()"><option>All</option><option>Women</option><option>Men</option><option>Kids</option><option>Accessories</option></select>
+<select id="prc" onchange="render()"><option value="a">All prices</option><option value="5">Below ₹5,000</option><option value="10">Below ₹10,000</option><option value="20">Above ₹20,000</option></select></div>
+<div class="grid" id="grid"></div></section>
+
+<section id="services"><h2>Our Services</h2><div class="svc">
+<div>🚚<h3>Free delivery</h3><p>On orders above ₹999 across India.</p></div>
+<div>✂️<h3>Custom tailoring</h3><p>Get your fit altered or made to measure.</p></div>
+<div>♻️<h3>Easy exchange</h3><p>7-day size and colour exchange.</p></div>
+<div>🎁<h3>Gift wrapping</h3><p>Eco-friendly gift packaging.</p></div></div></section>
+
+<section id="reviews"><h2>Customer Reviews</h2><div id="revs"></div>
+<form onsubmit="addRev(event)"><h3>Add your review</h3>
+<input id="rn" placeholder="Your name" required>
+<div class="stars" id="stars"></div>
+<textarea id="rt" rows="3" placeholder="Share your experience" required></textarea>
+<button class="btn">Submit review</button></form></section>
+
+<section id="help"><h2>Help Center</h2>
+<p>Need help choosing or tracking an order? Talk to us.</p>
+<p><a class="btn" href="https://wa.me/919999999999?text=Hi%20DHARA%2C%20I%20need%20help" target="_blank" rel="noopener">💬 Chat with us</a></p>
+<form onsubmit="sched(event)"><h3>Schedule a call</h3>
+<input id="hn" placeholder="Your name" required><input id="hp" type="tel" placeholder="Phone number" required>
+<select id="ht"><option>10am – 12pm</option><option>12pm – 3pm</option><option>3pm – 6pm</option><option>6pm – 8pm</option></select>
+<input id="hd" type="date" required><button class="btn">Request call</button></form></section>
+
+<section id="contact"><h2>Visit or Contact Us</h2>
+<p><b>Sustainable Cloths</b><br>No. 00, Handloom Street,<br>Your City, State – PIN 000000<br>
+📞 <a href="tel:+919999999999">+91 99999 99999</a> (Phone / WhatsApp)<br>
+✉️ <a href="mailto:care@sustainablecloths.example">care@sustainablecloths.example</a><br>🕘 Open daily, 9am–8pm</p></section>
+<footer>© DHARA Sustainable Clothing · <a href="https://dhara-sustainable-clothing.my.canva.site/" target="_blank" rel="noopener">Our website</a></footer>
+<a class="chat" href="https://wa.me/919999999999" target="_blank" rel="noopener">💬 Chat</a>
+
+<div class="modal" id="pm"><div class="box" id="pb"></div></div>
+<div class="drawer" id="dr"></div><div class="toast" id="ts"></div>
+
+<script>
+const P=[
+{id:1,n:"Handloom Cotton Kurta",c:"Women",p:1299,o:1599,e:"👘",bg:"#e8d9b8",d:"Soft handwoven organic cotton, naturally dyed."},
+{id:2,n:"Linen Summer Dress",c:"Women",p:1799,o:2199,e:"👗",bg:"#cfe0c3",d:"Breathable flax linen, relaxed fit."},
+{id:3,n:"Khadi Shirt",c:"Men",p:1199,o:1499,e:"👔",bg:"#d8dfe6",d:"Classic khadi, ideal for daily wear."},
+{id:4,n:"Organic Cotton Tee",c:"Men",p:699,o:899,e:"👕",bg:"#f0d2bf",d:"GOTS-certified cotton, super soft."},
+{id:5,n:"Kids Block-Print Set",c:"Kids",p:899,o:1099,e:"🧒",bg:"#f6e2a8",d:"Skin-friendly block prints for little ones."},
+{id:6,n:"Jute Tote Bag",c:"Accessories",p:449,o:599,e:"👜",bg:"#dcc7a1",d:"Sturdy handmade jute, plastic-free."},
+{id:7,n:"Handwoven Stole",c:"Accessories",p:799,o:999,e:"🧣",bg:"#e3c4cf",d:"Light handwoven stole in earthy tones."},
+{id:8,n:"Ikat Palazzo Pants",c:"Women",p:999,o:1299,e:"👖",bg:"#c8d8d6",d:"Comfortable ikat cotton palazzos."}];
+const CP={DHARA10:{t:"pct",v:10},WELCOME200:{t:"flat",v:200,min:1500},FREESHIP:{t:"ship"}};
+let cart=[],coupon=null,rating=5,revs=[{n:"Ananya",r:5,t:"Lovely fabric and super comfortable kurta!"},{n:"Ravi",r:4,t:"Great quality, quick delivery."}];
+const $=id=>document.getElementById(id),R=n=>"₹"+n.toLocaleString("en-IN");
+function toast(m){const t=$("ts");t.textContent=m;t.style.display="block";setTimeout(()=>t.style.display="none",2200)}
+try{const s=JSON.parse(localStorage.getItem("dh_rev")||"null");if(s)revs=s}catch(e){}
+function render(){const q=$("q").value.toLowerCase(),c=$("cat").value;
+const pr=$("prc").value,pf=x=>pr=="5"?x.p<5000:pr=="10"?x.p<10000:pr=="20"?x.p>=20000:true;
+const l=P.filter(x=>(c=="All"||x.c==c)&&pf(x)&&x.n.toLowerCase().includes(q));
+$("grid").innerHTML=l.map(x=>`<div class="card"><div class="img" onclick="view(${x.id})">${art(x)}</div><div class="in"><h3>${x.n}</h3><small style="color:var(--mut)">${x.m}</small><br><span class="pr">${R(x.p)}</span><span class="old">${R(x.o)}</span>
+<div class="row"><button class="btn" onclick="add(${x.id})">Add to cart</button><button class="btn alt" onclick="enq(${x.id})">Enquire</button></div></div></div>`).join("")||"<p>No products found.</p>"}
+function view(i){const x=P.find(y=>y.id==i);box(`<div class="img" style="border-radius:10px">${art(x)}</div><h2>${x.n}</h2><p>${x.d}</p>${spec(x)}<p class="pr">${R(x.p)} <span class="old">${R(x.o)}</span></p><div class="row"><button class="btn" onclick="add(${i});closeM()">Add to cart</button><button class="btn alt" onclick="enq(${i})">Enquire</button></div>`)}
+function box(h){$("pb").innerHTML=h;$("pm").classList.add("on")}function closeM(){$("pm").classList.remove("on")}
+$("pm").onclick=e=>{if(e.target.id=="pm")closeM()};
+function enq(i){const x=P.find(y=>y.id==i);box(`<h2>Enquire: ${x.n}</h2><form onsubmit="sendEnq(event,${i})"><input id="en" placeholder="Your name" required><input id="ep" type="tel" placeholder="Phone / WhatsApp" required><textarea id="em" rows="3" placeholder="Size, colour, availability…"></textarea><button class="btn">Send on WhatsApp</button></form>`)}
+function sendEnq(e,i){e.preventDefault();const x=P.find(y=>y.id==i);const m=`Hi DHARA, I'm ${$("en").value} (${$("ep").value}). Enquiry about ${x.n}: ${$("em").value}`;window.open("https://wa.me/919999999999?text="+encodeURIComponent(m),"_blank");closeM();toast("Enquiry ready to send")}
+function add(i){const l=cart.find(x=>x.id==i);l?l.q++:cart.push({id:i,q:1});upd();toast("Added to cart")}
+function chg(i,d){const l=cart.find(x=>x.id==i);l.q+=d;if(l.q<1)cart=cart.filter(x=>x.id!=i);upd();openCart()}
+function tot(){const s=cart.reduce((a,l)=>a+P.find(x=>x.id==l.id).p*l.q,0);let d=0,sh=s>=999||!s?0:79;
+if(coupon){const c=CP[coupon];if(c.t=="pct")d=Math.round(s*c.v/100);if(c.t=="flat"&&s>=c.min)d=c.v;if(c.t=="ship")sh=0}
+return{s,d,sh,t:Math.max(0,s-d+sh)}}
+function upd(){$("cc").textContent=cart.reduce((a,l)=>a+l.q,0)}
+function openCart(){const t=tot();$("dr").innerHTML=`<div style="display:flex;justify-content:space-between"><h2>Your Cart</h2><button onclick="closeCart()" style="background:none;border:0;font-size:22px;cursor:pointer">✕</button></div>`+
+(cart.length?cart.map(l=>{const x=P.find(y=>y.id==l.id);return`<div class="ci"><span class="e">${x.e}</span><div><b>${x.n}</b><br>${R(x.p)}</div><span class="q"><button onclick="chg(${x.id},-1)">−</button> ${l.q} <button onclick="chg(${x.id},1)">+</button></span></div>`}).join("")+
+`<div class="row" style="margin:12px 0"><input id="cin" placeholder="Coupon code" style="flex:1;padding:8px;border:1px solid var(--bd);border-radius:8px;background:var(--card)"><button class="btn" style="flex:0" onclick="apply()">Apply</button></div>
+<p>Subtotal: ${R(t.s)}<br>Discount${coupon?` (${coupon})`:""}: −${R(t.d)}<br>Delivery: ${t.sh?R(t.sh):"Free"}<br><b>Total: ${R(t.t)}</b></p><button class="btn" style="width:100%" onclick="checkout()">Proceed to pay</button>`:"<p>Your cart is empty.</p>");
+$("dr").classList.add("on")}
+function closeCart(){$("dr").classList.remove("on")}
+function apply(){const c=$("cin").value.trim().toUpperCase();if(!CP[c])return toast("Invalid coupon");if(CP[c].min&&tot().s<CP[c].min)return toast("Min order ₹"+CP[c].min);coupon=c;openCart();toast("Coupon applied")}
+function checkout(){closeCart();const t=tot();box(`<h2>Checkout · ${R(t.t)}</h2><form onsubmit="pay(event)"><input id="cn" placeholder="Full name" required><input id="cph" type="tel" placeholder="Phone" required><textarea id="ca" rows="2" placeholder="Delivery address" required></textarea>
+<select id="pm2"><option>UPI (GPay / PhonePe / Paytm)</option><option>Credit / Debit Card</option><option>Net Banking</option><option>Cash on Delivery</option></select><button class="btn">Pay ${R(t.t)}</button><small style="color:var(--mut)">Demo checkout: connect Razorpay/PayU to take real payments.</small></form>`)}
+function pay(e){e.preventDefault();const id="DH"+Math.floor(Math.random()*900000+100000);cart=[];coupon=null;upd();box(`<h2>✅ Order placed!</h2><p>Thank you, ${$("cn").value}. Your order <b>${id}</b> is confirmed.</p><button class="btn" onclick="closeM()">Continue shopping</button>`)}
+function stars(){$("stars").innerHTML=[1,2,3,4,5].map(i=>`<button type="button" onclick="rating=${i};stars()">${i<=rating?"★":"☆"}</button>`).join("")}
+function showRev(){$("revs").innerHTML=revs.map(r=>`<div class="rev"><b>${r.n}</b> <span style="color:#e0a100">${"★".repeat(r.r)}${"☆".repeat(5-r.r)}</span><br>${r.t.replace(/</g,"&lt;")}</div>`).join("")}
+function addRev(e){e.preventDefault();revs.unshift({n:$("rn").value.replace(/</g,"&lt;"),r:rating,t:$("rt").value});try{localStorage.setItem("dh_rev",JSON.stringify(revs))}catch(x){}e.target.reset();showRev();toast("Thanks for your review!")}
+function sched(e){e.preventDefault();toast("Call requested! We'll ring you "+$("hd").value);e.target.reset()}
+const M={
+1:{s:"kurta",k:"#b9854a",pt:"weave",m:"100% organic handloom cotton",dye:"Natural plant dyes (madder, turmeric)",wt:"Medium, 120 GSM",fit:"Regular, straight cut",care:"Cold hand wash, dry in shade",org:"Handwoven by artisan clusters"},
+2:{s:"dress",k:"#7d9a6a",pt:"weave",m:"100% European flax linen",dye:"Low-impact azo-free dyes",wt:"Light, 150 GSM",fit:"Relaxed, knee length",care:"Machine wash cold, gentle cycle",org:"Stitched in small family units"},
+3:{s:"shirt",k:"#8aa0b5",pt:"weave",m:"Hand-spun, handwoven khadi cotton",dye:"Natural indigo",wt:"Medium, 140 GSM",fit:"Regular fit, full sleeve",care:"Hand wash separately, soften with each wash",org:"Handspun and handwoven"},
+4:{s:"tee",k:"#d2733f",pt:"plain",m:"100% organic combed cotton",dye:"Water-based, azo-free dyes",wt:"Soft jersey, 180 GSM",fit:"Unisex, slightly loose",care:"Machine wash cold, do not bleach",org:"Made with organic-certified cotton"},
+5:{s:"kids",k:"#e0a72f",pt:"dots",m:"Soft organic cotton muslin",dye:"Hand block-printed, vegetable dyes",wt:"Light, 110 GSM",fit:"Comfy, ages 2 to 10",care:"Gentle wash, safe for sensitive skin",org:"Block-printed by local artisans"},
+6:{s:"bag",k:"#a8814f",pt:"weave",m:"Natural jute with cotton lining",dye:"Undyed, natural fibre",wt:"Holds up to 8 kg",fit:"38 x 36 cm, long handles",care:"Spot clean, air dry",org:"Handmade, plastic-free"},
+7:{s:"stole",k:"#b5677f",pt:"weave",m:"Handwoven cotton-silk blend",dye:"Natural dyes, earthy tones",wt:"Featherlight",fit:"180 x 70 cm",care:"Dry clean or cold hand wash",org:"Handloom weavers"},
+8:{s:"pants",k:"#4f7f7a",pt:"ikat",m:"Handloom ikat cotton",dye:"Resist-dyed ikat, azo-free",wt:"Medium, 130 GSM",fit:"Wide leg, elastic waist",care:"Cold wash, wash dark colours separately",org:"Ikat-woven by artisan families"}};
+P.forEach(x=>Object.assign(x,M[x.id]));
+const N=(id,n,c,p,o,bg,k,s,pt,m,dye,wt,fit,care,org,d)=>P.push({id,n,c,p,o,e:"✨",bg,k,s,pt,m,dye,wt,fit,care,org,d});
+N(9,"Handloom Silk Saree","Women",8500,9800,"#e9d3dc","#a33b5c","stole","weave","Handwoven mulberry silk","Natural and low-impact dyes","Medium drape","6.3 m with blouse piece","Dry clean only","Handloom weavers","A graceful everyday-festive saree with a soft sheen.");
+N(10,"Silk Blend Kurta Set","Men",6800,7900,"#d9d3c0","#5b6e4a","kurta","weave","Handloom silk-cotton blend","Natural dyes","Medium, 160 GSM","Regular, with churidar","Dry clean recommended","Artisan tailored","Elegant festive kurta set.");
+N(11,"Kids Festive Lehenga","Kids",4200,4900,"#f3d5dc","#c4527a","dress","dots","Organic cotton with hand block print","Vegetable dyes","Light, 120 GSM","Ages 3 to 10","Gentle hand wash","Block-printed by artisans","A twirl-ready lehenga that stays soft on skin.");
+N(12,"Kids Silk Sherwani","Kids",5900,6800,"#dfe2c8","#8a7a2f","kurta","weave","Handloom silk blend","Natural dyes","Medium","Ages 3 to 10","Dry clean only","Artisan tailored","A festive sherwani for little ones.");
+N(13,"Zari Bridal Silk Saree","Women",24500,28900,"#f1dcc0","#9c2f3f","stole","ikat","Pure handwoven silk with zari border","Natural dyes","Rich, heavy drape","6.3 m with blouse piece","Dry clean only","Master weavers","A statement bridal saree woven over many days.");
+N(14,"Embroidered Silk Sherwani","Men",22900,26500,"#dcd6c8","#3d4f3a","kurta","ikat","Handloom silk with hand embroidery","Natural dyes","Structured","Tailored to your size","Dry clean only","Embroidery artisans","A wedding-ready sherwani with fine handwork.");
+N(15,"Kids Bridal Lehenga Set","Kids",20500,23500,"#f4d9d0","#b8455a","dress","ikat","Silk with zari and organic cotton lining","Natural dyes","Light but rich","Ages 4 to 12","Dry clean only","Artisan crafted","A premium festive set for weddings.");
+N(16,"Designer Zari Lehenga","Women",28000,32000,"#e8d0d8","#7a2e55","dress","ikat","Handloom silk with zari","Natural dyes","Heavy flare","Made to measure","Dry clean only","Master artisans","A bridal lehenga with traditional zari work.");
+N(17,"Handloom Bandhgala Suit","Men",21500,24900,"#d6dce0","#2f4a5c","shirt","weave","Handwoven wool-silk blend","Natural dyes","Structured","Made to measure","Dry clean only","Tailors and weavers","A tailored suit for weddings and occasions.");
+const D={kurta:"M35 12L45 8Q50 14 55 8L65 12L82 30L74 38L68 32L70 90L30 90L32 32L26 38L18 30Z",dress:"M40 10L46 8Q50 14 54 8L60 10L64 30L74 90L26 90L36 30Z",shirt:"M34 14L45 10L50 20L55 10L66 14L84 30L76 40L68 34L68 82L32 82L32 34L24 40L16 30Z",tee:"M36 14Q50 24 64 14L84 28L76 40L68 34L68 82L32 82L32 34L24 40L16 28Z",bag:"M25 38H75L80 88H20Z M36 38Q36 14 50 14Q64 14 64 38L60 38Q60 20 50 20Q40 20 40 38Z",stole:"M20 20Q50 10 80 20L84 85Q50 95 16 85Z",pants:"M30 14H70L76 90H54L50 40L46 90H24Z"};D.kids=D.tee;
+function art(x){const i="p"+x.id,T={weave:'<path d="M0 3H6M3 0V6" stroke="#fff" stroke-opacity=".3" stroke-width=".8"/>',dots:'<circle cx="4" cy="4" r="1.6" fill="#fff" fill-opacity=".5"/>',ikat:'<path d="M0 4L2.5 0L5 4L7.5 0L10 4" fill="none" stroke="#fff" stroke-opacity=".55"/>',plain:'<path d="M0 2H6" stroke="#fff" stroke-opacity=".12"/>'},d=D[x.s],tr=x.s=="kids"?' transform="translate(10 14) scale(.8)"':"";
+return `<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%"><defs><radialGradient id="g${i}" cx=".5" cy=".4" r=".8"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="${x.bg}"/></radialGradient><pattern id="${i}" width="8" height="8" patternUnits="userSpaceOnUse">${T[x.pt]}</pattern></defs><rect width="100" height="100" fill="url(#g${i})"/><ellipse cx="50" cy="93" rx="28" ry="3" fill="#000" opacity=".13"/><g${tr}><path d="${d}" fill="${x.k}" stroke="#0003" stroke-width=".8"/><path d="${d}" fill="url(#${i})"/></g></svg>`}
+function spec(x){return `<table class="spec"><tr><td>Material</td><td>${x.m}</td></tr><tr><td>Dye</td><td>${x.dye}</td></tr><tr><td>Weight</td><td>${x.wt}</td></tr><tr><td>Fit / Size</td><td>${x.fit}</td></tr><tr><td>Care</td><td>${x.care}</td></tr><tr><td>Made by</td><td>${x.org}</td></tr></table>`}
+function showOffers(){box(`<div class="big">🎉 Special Offers for You</div><p style="text-align:center;color:var(--mut)">Tap Apply and the coupon is added to your cart.</p>${[["DHARA10","10% off on all orders"],["WELCOME200","₹200 off on orders above ₹1500"],["FREESHIP","Free delivery on any order"]].map(o=>`<div class="cp"><div><b>${o[0]}</b><br>${o[1]}</div><button onclick="grab('${o[0]}')">Apply</button></div>`).join("")}<button class="btn" style="width:100%" onclick="closeM()">Start shopping</button>`)}
+function grab(c){coupon=c;closeM();toast(c+" applied")}
+render();stars();showRev();setTimeout(showOffers,500);
+</script></body></html>
